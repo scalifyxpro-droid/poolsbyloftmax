@@ -1,0 +1,35 @@
+---
+// DEMO CONTENT — swap every quote/name below for a real client testimonial before this site goes live.
+const reviews = [
+  { quote: "We gave them a bare plot and a rough idea of what we wanted. They came back with a layout that actually made sense for how our kids use the garden, and the build stayed on the timeline they quoted.", name: 'A. Khan', project: 'Design & Construction · Arabian Ranches' },
+  { quote: "Our pool guy used to cancel half his visits. This team turns up on the day they say they will, every time, and the water's never looked better.", name: 'S. Fernandes', project: 'Maintenance · Jumeirah Park' },
+  { quote: "Our old pool was ten years old and the tiling had gone. They re-did the waterproofing properly instead of just tiling over the problem, which is what the last contractor tried to do.", name: 'M. Al Suwaidi', project: 'Renovation & Restoration · Al Barsha' },
+  { quote: "We'd had two other companies out to look at a leak and both just topped up the water and left. Loftmax actually found the crack in the return line and fixed it in a day.", name: 'R. Thomas', project: 'Leak Detection · Dubai Hills' },
+  { quote: "With a toddler at home the fencing wasn't optional. They fitted a glass barrier that doesn't ruin the view of the pool, which is what we cared about most.", name: 'H. Osei', project: 'Safety & Fencing · Mirdif' },
+  { quote: "The garden around the pool was an afterthought until they got involved. Decking, planting, lighting — it all ties together now instead of looking bolted on.", name: 'L. Novak', project: 'Landscaping · The Springs' },
+  { quote: "I was manually dosing chlorine for years and never trusted the levels. They set up a proper testing schedule and now I actually get a reading, not a guess.", name: 'F. Haddad', project: 'Water Testing · Al Furjan' },
+  { quote: "We were still deciding between two pool shapes before signing off on the villa design. They walked the plot with our architect and pointed out issues neither of us had thought of.", name: 'K. Prasad', project: 'Pool Consultancy · Damac Hills' },
+  { quote: "What stood out was communication — every visit was confirmed the day before, and if something needed longer than planned, they called instead of just not showing up.", name: 'N. Ibrahim', project: 'Villa Project · Dubai' },
+];
+const looped = [...reviews, ...reviews];
+---
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-head light">
+      <span class="eyebrow">Client Love</span>
+      <h2>Testimonials</h2>
+      <p>Demo content for layout — swap in real client quotes before this site goes live.</p>
+    </div>
+  </div>
+  <div class="testimonial-marquee">
+    <div class="testimonial-track">
+      {looped.map((review) => (
+        <div class="testimonial-card">
+          <p>&ldquo;{review.quote}&rdquo;</p>
+          <strong>{review.name}</strong>
+          <span>{review.project}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

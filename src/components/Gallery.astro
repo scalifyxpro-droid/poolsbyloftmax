@@ -1,0 +1,26 @@
+---
+const photos = [
+  { file: 'project-3.jpeg', alt: 'Rectangular villa pool with steel handrail' },
+  { file: 'project-5.jpeg', alt: 'Villa pool with pergola and tiled entry steps' },
+  { file: 'project-1.jpeg', alt: 'Raised spa with overflow edge into main pool' },
+  { file: 'project-6.jpeg', alt: 'Tiled pool framed by mature palm trees' },
+  { file: 'project-4.jpeg', alt: 'Underwater view of blue mosaic pool tiling' },
+  { file: 'project-7.jpeg', alt: 'Raised-deck skimmer pool on fresh lawn' },
+  { file: 'project-8.jpeg', alt: 'Pool with wading shelf and pergola seating' },
+  { file: 'project-2.jpeg', alt: 'Aerial view of garden pool surrounded by palms' },
+];
+---
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Our Work</span>
+      <h2>Gallery</h2>
+      <p>A look at real pools we've designed, built and maintained for our clients.</p>
+    </div>
+    <div class="gallery-grid">
+      {photos.map((photo) => (
+        <img src={`/images/gallery/${photo.file}`} alt={photo.alt} loading="lazy" />
+      ))}
+    </div>
+  </div>
+</section>

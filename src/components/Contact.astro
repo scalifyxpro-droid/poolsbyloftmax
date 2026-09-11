@@ -1,0 +1,32 @@
+---
+const details = [
+  { label: 'Call / WhatsApp', value: '+971 55 833 0586', href: 'tel:+971558330586' },
+  { label: 'Email', value: 'info@poolsbyloftmax.com', href: 'mailto:info@poolsbyloftmax.com' },
+  { label: 'Office', value: 'BOB Building, Al Suq St, Al Souq Al Kabeer, Al Fahidi, Dubai, United Arab Emirates' },
+];
+---
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Contact Us</h2>
+      <p>Have a pool in mind, or one that needs attention? Tell us about your space and we'll get back to you with next steps.</p>
+      <ul>
+        {details.map((detail) => (
+          <li>
+            <strong>{detail.label}:</strong>{' '}
+            {detail.href ? <a href={detail.href}>{detail.value}</a> : detail.value}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <form class="contact-form" id="contactForm">
+      <input type="text" name="name" placeholder="Your Name*" required />
+      <input type="email" name="email" placeholder="Email*" required />
+      <input type="tel" name="phone" placeholder="Phone No*" required />
+      <textarea name="message" placeholder="Message*" rows="5" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+      <p class="form-note" id="formNote"></p>
+    </form>
+  </div>
+</section>

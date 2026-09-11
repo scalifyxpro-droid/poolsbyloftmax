@@ -1,0 +1,34 @@
+---
+const slides = [
+  {
+    image: '/images/gallery/project-5.jpeg',
+    title: 'Built Around How You Actually Live',
+    text: 'Every pool we hand over is shaped by your villa, your garden and the way your family uses the space.',
+  },
+  {
+    image: '/images/gallery/project-2.jpeg',
+    title: 'Dubai Gardens, Done Properly',
+    text: 'From planting to paving, we finish the space around the pool with the same care we put into the pool itself.',
+  },
+  {
+    image: '/images/gallery/project-8.jpeg',
+    title: 'This Is Our Actual Work',
+    text: 'No stock photography — every image on this site is a pool we have personally designed, built or maintained.',
+  },
+];
+---
+<section class="hero" id="home">
+  <div class="slides">
+    {slides.map((slide, i) => (
+      <div class:list={['slide', { active: i === 0 }]} style={`background-image:url('${slide.image}')`}>
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2>{slide.title}</h2>
+          <p>{slide.text}</p>
+          <a href="#services" class="btn-circle">Learn<br />More</a>
+        </div>
+      </div>
+    ))}
+  </div>
+  <div class="slide-dots" id="slideDots"></div>
+</section>

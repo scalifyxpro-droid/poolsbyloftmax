@@ -1,0 +1,27 @@
+---
+const stats = [
+  { id: 'statYears', target: 15, label: 'Years Combined Experience' },
+  { id: 'statProjects', target: 250, label: 'Pools Completed' },
+  { id: 'statClients', target: 200, label: 'Happy Clients' },
+  { id: 'statAwards', target: 5, label: 'Awards Won' },
+];
+---
+<section class="intro">
+  <div class="container intro-grid">
+    <div class="intro-text">
+      <span class="eyebrow">Based in Dubai</span>
+      <h2>A pool is only as good as the details nobody sees.</h2>
+      <p>The tiling under the waterline, the slope of the deck, the way the plant room is laid out — that's where most pool projects quietly go wrong. Pools by Loftmax gets those details right first, then makes it beautiful.</p>
+      <p>Whether you're starting from an empty plot, replacing a tired old liner, or trying to work out why your pump won't stop tripping, we treat every job — big or small — with the same level of attention.</p>
+      <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    </div>
+    <div class="intro-stats">
+      {stats.map((stat) => (
+        <div class="stat" data-target={stat.target}>
+          <strong id={stat.id}>0</strong>
+          <span>{stat.label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

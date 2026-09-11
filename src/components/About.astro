@@ -1,0 +1,32 @@
+---
+const points = [
+  'In-house design, construction and finishing — no subcontracted guesswork',
+  'Villa gardens and landscaping planned around the pool, not as an afterthought',
+  'Scheduled maintenance and water treatment plans for existing pools',
+  'Diagnosis and repair of leaks, pumps, tiling and old liners',
+  'Custom fencing and safety barriers for pools with young children or pets',
+];
+---
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-text">
+      <h2>Pools by Loftmax</h2>
+      <p class="about-lead">A Dubai-based team that designs, builds and looks after swimming pools for villas and private homes.</p>
+      <p>We started Pools by Loftmax because too many pool projects in this city are handed off between a designer, a contractor and a maintenance crew who never talk to each other — and the pool suffers for it. We keep design, build and aftercare under one roof, so the person who drew your pool is accountable for how it actually performs.</p>
+      <blockquote>&ldquo;A pool has to work in July, not just look good in the render. That's the standard we hold every project to.&rdquo;</blockquote>
+      <p class="signature">Founder &amp; Managing Director</p>
+      <ul class="about-list">
+        {points.map((point) => (
+          <li>
+            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" stroke-width="1.6"/>
+              <path d="M7.5 12.5 L10.5 15.5 L16.5 9"/>
+            </svg>
+            {point}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="about-image" style="background-image:url('/images/gallery/project-9.jpeg')"></div>
+  </div>
+</section>
