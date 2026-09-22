@@ -168,7 +168,7 @@ ul{list-style:none;}
 }
 .dot.active{background:var(--white);color:var(--deep-blue);border-color:var(--white);}
 .slide-arrow{
-  position:absolute;top:50%;transform:translateY(-50%);z-index:5;
+  position:absolute;top:50%;transform:translateY(-50%);z-index:50;
   width:48px;height:48px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
   background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.5);
@@ -177,12 +177,12 @@ ul{list-style:none;}
 }
 .slide-arrow svg{width:22px;height:22px;}
 .slide-arrow:hover{background:rgba(255,255,255,0.9);color:var(--deep-blue);border-color:var(--white);}
-.slide-arrow-prev{left:24px;}
-.slide-arrow-next{right:24px;}
+.slide-arrow-prev{left:88px;}
+.slide-arrow-next{right:72px;}
 @media (max-width:900px){
   .slide-arrow{width:40px;height:40px;}
   .slide-arrow-prev{left:12px;}
-  .slide-arrow-next{right:12px;}
+  .slide-arrow-next{right:56px;}
 }
 
 /* ===== INTRO ===== */
