@@ -36,7 +36,14 @@ document.addEventListener('DOMContentLoaded', function () {
     goToSlide((current + 1) % slides.length);
   }
 
-  var sliderInterval = setInterval(nextSlide, 5000);
+  function prevSlide() {
+    goToSlide((current - 1 + slides.length) % slides.length);
+  }
+
+  var nextBtn = document.getElementById('slideNext');
+  var prevBtn = document.getElementById('slidePrev');
+  if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+  if (prevBtn) prevBtn.addEventListener('click', prevSlide);
 
   // Counter animation
   var counters = [

@@ -118,13 +118,13 @@ ul{list-style:none;}
 }
 .logo{
   margin:0 auto;
-  display:flex;align-items:center;
+  display:flex;align-items:center;justify-content:center;
   background:var(--white);
-  padding:8px 18px;
-  border-radius:8px;
+  padding:6px;
+  border-radius:50%;
   box-shadow:0 6px 18px rgba(0,0,0,0.15);
 }
-.logo img{height:44px;width:auto;display:block;}
+.logo img{height:74px;width:74px;object-fit:contain;display:block;}
 .header-phone{color:var(--white);font-size:14px;position:absolute;right:40px;top:30px;}
 
 /* ===== HERO ===== */
@@ -167,6 +167,23 @@ ul{list-style:none;}
   color:rgba(255,255,255,.7);font-size:12px;cursor:pointer;transition:all .2s;
 }
 .dot.active{background:var(--white);color:var(--deep-blue);border-color:var(--white);}
+.slide-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:5;
+  width:48px;height:48px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.5);
+  color:var(--white);cursor:pointer;
+  transition:background .2s ease, border-color .2s ease;
+}
+.slide-arrow svg{width:22px;height:22px;}
+.slide-arrow:hover{background:rgba(255,255,255,0.9);color:var(--deep-blue);border-color:var(--white);}
+.slide-arrow-prev{left:24px;}
+.slide-arrow-next{right:24px;}
+@media (max-width:900px){
+  .slide-arrow{width:40px;height:40px;}
+  .slide-arrow-prev{left:12px;}
+  .slide-arrow-next{right:12px;}
+}
 
 /* ===== INTRO ===== */
 .intro{padding:90px 0;background:var(--sand);}
