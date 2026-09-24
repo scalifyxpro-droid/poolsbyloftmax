@@ -19,4 +19,33 @@ document.addEventListener('DOMContentLoaded', function () {
     note.textContent = 'Thank you! Your message has been received. We will get back to you shortly.';
     form.reset();
   });
+
+  // Hero quote form -> WhatsApp
+  var heroForm = document.getElementById('heroQuoteForm');
+  var heroNote = document.getElementById('heroFormNote');
+  var whatsappNumber = '971558330586';
+  if (heroForm) {
+    heroForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var data = new FormData(heroForm);
+      var name = (data.get('name') || '').trim();
+      var whatsapp = (data.get('whatsapp') || '').trim();
+      var service = (data.get('service') || '').trim();
+      var message = (data.get('message') || '').trim();
+
+      var lines = [
+        'Hi Pools by Loftmax, I would like a quote.',
+        'Name: ' + name,
+        'WhatsApp: ' + whatsapp,
+        'Service: ' + service,
+      ];
+      if (message) lines.push('Requirement: ' + message);
+
+      var text = encodeURIComponent(lines.join('\n'));
+      window.open('https://wa.me/' + whatsappNumber + '?text=' + text, '_blank');
+
+      if (heroNote) heroNote.textContent = 'Opening WhatsApp…';
+      heroForm.reset();
+    });
+  }
 });
