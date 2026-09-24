@@ -393,10 +393,12 @@ ul{list-style:none;}
 .contact-info li a{color:var(--pool-blue);font-weight:600;}
 .contact-info li a:hover{text-decoration:underline;}
 .contact-form{display:flex;flex-direction:column;gap:16px;background:var(--white);padding:32px;border-radius:10px;box-shadow:var(--shadow);}
-.contact-form input,.contact-form textarea{
-  border:1px solid #ddd;border-radius:6px;padding:14px;font-family:inherit;font-size:14px;
+.contact-form input,.contact-form select,.contact-form textarea{
+  border:1px solid #ddd;border-radius:6px;padding:14px;font-family:inherit;font-size:14px;color:var(--dark);
+  background:var(--white);
 }
-.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--pool-blue);}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{outline:none;border-color:var(--pool-blue);}
+.contact-form button{display:flex;align-items:center;justify-content:center;gap:10px;}
 .form-note{color:var(--pool-blue);font-size:14px;min-height:20px;}
 
 /* ===== FOOTER ===== */

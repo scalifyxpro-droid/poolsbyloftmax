@@ -11,23 +11,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Contact form (static placeholder submit)
-  var form = document.getElementById('contactForm');
-  var note = document.getElementById('formNote');
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    note.textContent = 'Thank you! Your message has been received. We will get back to you shortly.';
-    form.reset();
-  });
-
-  // Hero quote form -> WhatsApp
-  var heroForm = document.getElementById('heroQuoteForm');
-  var heroNote = document.getElementById('heroFormNote');
+  // Quote forms -> WhatsApp (hero + contact section)
   var whatsappNumber = '971558330586';
-  if (heroForm) {
-    heroForm.addEventListener('submit', function (e) {
+  function wireQuoteForm(formId, noteId) {
+    var quoteForm = document.getElementById(formId);
+    var quoteNote = noteId ? document.getElementById(noteId) : null;
+    if (!quoteForm) return;
+    quoteForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      var data = new FormData(heroForm);
+      var data = new FormData(quoteForm);
       var name = (data.get('name') || '').trim();
       var whatsapp = (data.get('whatsapp') || '').trim();
       var service = (data.get('service') || '').trim();
@@ -44,8 +36,10 @@ document.addEventListener('DOMContentLoaded', function () {
       var text = encodeURIComponent(lines.join('\n'));
       window.open('https://wa.me/' + whatsappNumber + '?text=' + text, '_blank');
 
-      if (heroNote) heroNote.textContent = 'Opening WhatsApp…';
-      heroForm.reset();
+      if (quoteNote) quoteNote.textContent = 'Opening WhatsApp…';
+      quoteForm.reset();
     });
   }
+  wireQuoteForm('heroQuoteForm', 'heroFormNote');
+  wireQuoteForm('contactForm', 'formNote');
 });
