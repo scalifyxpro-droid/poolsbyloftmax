@@ -1,17 +1,31 @@
 ---
+const videos = [
+  { src: '/videos/pool-clip-1.mp4', poster: '/images/gallery/video-poster-1.jpg', title: 'Crystal Clear Water', tag: 'Finished Pool' },
+  { src: '/videos/pool-clip-2.mp4', poster: '/images/gallery/video-poster-2.jpg', title: 'Sunlight On The Water', tag: 'Finished Pool' },
+  { src: '/videos/construction-clip-1.mp4', poster: '/images/gallery/video-poster-3.jpg', title: 'Pouring The Foundation', tag: 'Under Construction' },
+  { src: '/videos/construction-clip-2.mp4', poster: '/images/gallery/video-poster-4.jpg', title: 'Marking Out The Build', tag: 'Under Construction' },
+];
 ---
 <section class="video-showcase" id="video">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">See It In Motion</span>
       <h2>Project Walkthrough</h2>
-      <p>A quick look at one of our finished pools.</p>
+      <p>Finished pools and a look behind the scenes at how they get built.</p>
     </div>
-    <div class="video-frame">
-      <video controls preload="metadata" poster="/images/gallery/project-5.jpeg">
-        <source src="/videos/project-tour.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+    <div class="video-grid">
+      {videos.map((v) => (
+        <div class="video-card">
+          <div class="video-frame">
+            <video controls preload="metadata" poster={v.poster}>
+              <source src={v.src} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <span class="video-tag">{v.tag}</span>
+          <h3>{v.title}</h3>
+        </div>
+      ))}
     </div>
   </div>
 </section>
