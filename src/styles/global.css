@@ -124,9 +124,9 @@ ul{list-style:none;}
   background:linear-gradient(100deg, rgba(8,18,26,0.85) 0%, rgba(8,18,26,0.65) 38%, rgba(8,18,26,0.35) 62%, rgba(8,18,26,0.55) 100%);
 }
 .hero-inner{
-  position:relative;z-index:2;width:100%;
-  display:flex;align-items:center;justify-content:space-between;gap:40px;
-  padding:110px 40px 40px 104px;
+  position:relative;z-index:2;width:100%;max-width:1560px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;gap:60px;
+  padding:110px 80px 40px 104px;
 }
 .hero-content{color:var(--white);max-width:600px;flex:1 1 480px;}
 .hero-eyebrow{
