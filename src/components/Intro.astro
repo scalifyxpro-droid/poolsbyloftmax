@@ -1,27 +1,35 @@
 ---
 const stats = [
-  { id: 'statYears', target: 15, label: 'Years Combined Experience' },
-  { id: 'statProjects', target: 250, label: 'Pools Completed' },
-  { id: 'statClients', target: 200, label: 'Happy Clients' },
-  { id: 'statAwards', target: 5, label: 'Awards Won' },
+  {
+    value: '100+',
+    label: 'Pools Completed',
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 34c3 0 3-3 6-3s3 3 6 3 3-3 6-3 3 3 6 3 3-3 6-3"/><path d="M10 34V14a4 4 0 0 1 4-4h4"/><path d="M38 34V18"/><circle cx="18" cy="10" r="3"/></svg>`,
+  },
+  {
+    value: '15+',
+    label: 'Years of Experience',
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="16" r="6"/><path d="M8 38c0-6.6 4.5-11 10-11s10 4.4 10 11"/><path d="M30 12a6 6 0 0 1 0 12"/><path d="M32 27c4.7.8 8 4.9 8 11"/></svg>`,
+  },
+  {
+    value: 'Premium',
+    label: 'Quality Finish',
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8h24l8 10-20 22L4 18Z"/><path d="M4 18h40 M18 8l-4 10 10 22 10-22-4-10 M18 8h12"/></svg>`,
+  },
+  {
+    value: 'Trusted',
+    label: 'Across Dubai',
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 44s14-12.6 14-24A14 14 0 0 0 10 20c0 11.4 14 24 14 24Z"/><circle cx="24" cy="19" r="5"/></svg>`,
+  },
 ];
 ---
 <section class="intro">
-  <div class="container intro-grid">
-    <div class="intro-text">
-      <span class="eyebrow">Based in Dubai</span>
-      <h2>A pool is only as good as the details nobody sees.</h2>
-      <p>The tiling under the waterline, the slope of the deck, the way the plant room is laid out — that's where most pool projects quietly go wrong. Pools by Loftmax gets those details right first, then makes it beautiful.</p>
-      <p>Whether you're starting from an empty plot, replacing a tired old liner, or trying to work out why your pump won't stop tripping, we treat every job — big or small — with the same level of attention.</p>
-      <a href="#contact" class="btn btn-outline">Get In Touch</a>
-    </div>
-    <div class="intro-stats">
-      {stats.map((stat) => (
-        <div class="stat" data-target={stat.target}>
-          <strong id={stat.id}>0</strong>
-          <span>{stat.label}</span>
-        </div>
-      ))}
-    </div>
+  <div class="stats-bar">
+    {stats.map((stat) => (
+      <div class="stat-item">
+        <span class="stat-icon" set:html={stat.icon} />
+        <strong>{stat.value}</strong>
+        <span>{stat.label}</span>
+      </div>
+    ))}
   </div>
 </section>

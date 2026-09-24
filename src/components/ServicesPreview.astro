@@ -1,0 +1,28 @@
+---
+const cards = [
+  { image: '/images/gallery/project-3.jpeg', title: 'Swimming Pools', subtitle: 'Skimmer & Overflow', alt: 'Rectangular villa swimming pool' },
+  { image: '/images/gallery/project-2.jpeg', title: 'Landscaping', subtitle: 'Green Spaces for Better Living', alt: 'Aerial view of landscaped garden and pool' },
+  { image: '/images/gallery/project-8.jpeg', title: 'Pergolas & Outdoor Living', subtitle: 'Stylish & Functional Spaces', alt: 'Pool with pergola seating area' },
+];
+---
+<section class="services-preview">
+  <div class="container">
+    <div class="services-preview-head">
+      <div>
+        <div class="eyebrow-row"><span class="rule"></span><span class="eyebrow">Our Services</span></div>
+        <h2>Complete Outdoor <span class="accent">Living</span> Solutions</h2>
+      </div>
+      <a href="#services" class="view-all-link">View All Services <span aria-hidden="true">&rarr;</span></a>
+    </div>
+    <div class="services-preview-grid">
+      {cards.map((card) => (
+        <a href="#services" class="preview-card">
+          <img src={card.image} alt={card.alt} loading="lazy" />
+          <h3>{card.title}</h3>
+          <p>{card.subtitle}</p>
+          <span class="arrow">&rarr;</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

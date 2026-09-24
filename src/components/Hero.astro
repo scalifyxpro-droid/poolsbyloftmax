@@ -1,40 +1,21 @@
 ---
-const slides = [
-  {
-    image: '/images/gallery/project-5.jpeg',
-    title: 'Built Around How You Actually Live',
-    text: 'Every pool we hand over is shaped by your villa, your garden and the way your family uses the space.',
-  },
-  {
-    image: '/images/gallery/project-2.jpeg',
-    title: 'Dubai Gardens, Done Properly',
-    text: 'From planting to paving, we finish the space around the pool with the same care we put into the pool itself.',
-  },
-  {
-    image: '/images/gallery/project-8.jpeg',
-    title: 'This Is Our Actual Work',
-    text: 'No stock photography — every image on this site is a pool we have personally designed, built or maintained.',
-  },
-];
 ---
-<section class="hero" id="home">
-  <div class="slides">
-    {slides.map((slide, i) => (
-      <div class:list={['slide', { active: i === 0 }]} style={`background-image:url('${slide.image}')`}>
-        <div class="slide-overlay"></div>
-        <div class="slide-content">
-          <h2>{slide.title}</h2>
-          <p>{slide.text}</p>
-          <a href="#services" class="btn-circle">Learn<br />More</a>
-        </div>
-      </div>
-    ))}
+<section class="hero" id="home" style="background-image:url('/images/gallery/project-5.jpeg')">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Luxury Pools. Better Living.</span>
+    <span class="hero-rule"></span>
+    <h1>Built Around How You <span class="accent">Actually</span> Live</h1>
+    <p>Every pool we hand over is shaped by your villa, your garden and the way your family uses the space.</p>
+    <div class="hero-actions">
+      <a href="#pooltypes" class="btn-pill">Explore Our Pools <span aria-hidden="true">&rarr;</span></a>
+      <a href="#video" class="watch-video">
+        <span class="play-circle" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </span>
+        Watch Video
+      </a>
+    </div>
   </div>
-  <button class="slide-arrow slide-arrow-prev" id="slidePrev" aria-label="Previous slide">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
-  </button>
-  <button class="slide-arrow slide-arrow-next" id="slideNext" aria-label="Next slide">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
-  </button>
-  <div class="slide-dots" id="slideDots"></div>
+  <div class="hero-script">More<br />Than a Pool</div>
 </section>
