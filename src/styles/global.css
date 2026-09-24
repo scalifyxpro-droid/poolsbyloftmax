@@ -86,19 +86,6 @@ ul{list-style:none;}
 }
 .nav-toggle span{width:26px;height:2px;background:var(--white);}
 
-/* ===== QUICK REQUEST RIBBON ===== */
-.quick-request{
-  position:fixed;top:40%;right:0;z-index:1100;
-  background:var(--orange);color:var(--white);
-  padding:16px 10px;
-  writing-mode:vertical-rl;
-  font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
-  border-radius:6px 0 0 6px;
-  box-shadow:-4px 0 14px rgba(0,0,0,0.2);
-  transition:padding .2s ease;
-}
-.quick-request:hover{padding-right:16px;background:#d97c0f;}
-
 /* ===== WHATSAPP FLOAT ===== */
 .whatsapp-float{
   position:fixed;bottom:24px;right:24px;z-index:1100;
@@ -119,12 +106,11 @@ ul{list-style:none;}
 .logo{
   margin:0 auto;
   display:flex;align-items:center;justify-content:center;
-  background:var(--white);
-  padding:6px;
-  border-radius:50%;
-  box-shadow:0 6px 18px rgba(0,0,0,0.15);
 }
-.logo img{height:74px;width:74px;object-fit:contain;display:block;}
+.logo img{
+  height:78px;width:78px;object-fit:contain;display:block;border-radius:50%;
+  filter:drop-shadow(0 6px 14px rgba(0,0,0,0.35));
+}
 .header-phone{color:var(--white);font-size:14px;position:absolute;right:40px;top:30px;}
 
 /* ===== HERO ===== */
@@ -276,15 +262,6 @@ ul{list-style:none;}
 .service-card h3{font-size:19px;margin-bottom:10px;color:var(--deep-blue);}
 .service-card p{color:var(--gray);font-size:14.5px;}
 
-/* ===== POOL TYPES ===== */
-.pool-types{padding:100px 0;background:var(--deep-blue);}
-.pool-types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
-.pool-type-card{background:var(--white);border-radius:10px;overflow:hidden;box-shadow:var(--shadow);}
-.pool-type-card img{height:220px;width:100%;object-fit:cover;}
-.pool-type-body{padding:24px;}
-.pool-type-body h3{color:var(--deep-blue);margin-bottom:10px;font-size:20px;}
-.pool-type-body p{color:var(--gray);font-size:14.5px;}
-
 /* ===== GALLERY ===== */
 .gallery{padding:100px 0;}
 .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
@@ -372,7 +349,7 @@ ul{list-style:none;}
 @media (max-width:900px){
   body{padding-left:0;}
   .intro-grid,.about-grid,.contact-grid{grid-template-columns:1fr;}
-  .services-grid,.pool-types-grid{grid-template-columns:repeat(2,1fr);}
+  .services-grid{grid-template-columns:repeat(2,1fr);}
   .testimonial-card{flex-basis:260px;}
   .gallery-grid{grid-template-columns:repeat(2,1fr);}
   .about-image{min-height:220px;order:-1;}
@@ -390,9 +367,8 @@ ul{list-style:none;}
   .top-bar{left:0;padding:18px 70px 18px 70px;}
   .header-phone{display:none;}
   .hero{margin-left:0;}
-  .quick-request{font-size:11px;padding:12px 8px;}
 }
 @media (max-width:560px){
-  .services-grid,.pool-types-grid,.gallery-grid{grid-template-columns:1fr 1fr;}
+  .services-grid,.gallery-grid{grid-template-columns:1fr 1fr;}
   .intro-stats{grid-template-columns:1fr;}
 }
