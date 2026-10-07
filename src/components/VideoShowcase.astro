@@ -12,12 +12,27 @@ const videos = [
       <span class="eyebrow">See It In Motion</span>
       <h2>Project Walkthrough</h2>
       <p>Finished pools and a look behind the scenes at how they get built.</p>
+      <div class="audio-toggle-wrap">
+        <button id="poolsideAudioBtn" class="audio-toggle-btn" type="button" aria-label="Play Poolside Ambient Music">
+          <span class="audio-icon play-icon">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+          <span class="audio-icon pause-icon" style="display:none;">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          </span>
+          <span class="audio-bars" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </span>
+          <span class="audio-label">Poolside Chill Music</span>
+        </button>
+        <audio id="poolsideAudio" src="/audio/poolside-vibes.mp3" preload="none" loop></audio>
+      </div>
     </div>
     <div class="video-grid">
       {videos.map((v) => (
         <div class="video-card">
           <div class="video-frame">
-            <video controls preload="metadata" poster={v.poster}>
+            <video controls preload="metadata" poster={v.poster} playsinline>
               <source src={v.src} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -29,3 +44,50 @@ const videos = [
     </div>
   </div>
 </section>
+
+<script>
+  const audio = document.getElementById('poolsideAudio') as HTMLAudioElement | null;
+  const btn = document.getElementById('poolsideAudioBtn');
+  const playIcon = btn?.querySelector('.play-icon') as HTMLElement | null;
+  const pauseIcon = btn?.querySelector('.pause-icon') as HTMLElement | null;
+  const label = btn?.querySelector('.audio-label') as HTMLElement | null;
+  const allVideos = document.querySelectorAll<HTMLVideoElement>('.video-showcase video');
+
+  if (btn && audio) {
+    btn.addEventListener('click', () => {
+      if (audio.paused) {
+        allVideos.forEach((v) => v.pause());
+        audio.play().then(() => {
+          btn.classList.add('is-playing');
+          if (playIcon) playIcon.style.display = 'none';
+          if (pauseIcon) pauseIcon.style.display = 'inline-flex';
+          if (label) label.textContent = 'Pause Music';
+        }).catch(() => {});
+      } else {
+        audio.pause();
+        btn.classList.remove('is-playing');
+        if (playIcon) playIcon.style.display = 'inline-flex';
+        if (pauseIcon) pauseIcon.style.display = 'none';
+        if (label) label.textContent = 'Poolside Chill Music';
+      }
+    });
+  }
+
+  // When any video plays, pause other videos and ambient audio
+  allVideos.forEach((vid) => {
+    vid.addEventListener('play', () => {
+      if (audio && !audio.paused) {
+        audio.pause();
+        btn?.classList.remove('is-playing');
+        if (playIcon) playIcon.style.display = 'inline-flex';
+        if (pauseIcon) pauseIcon.style.display = 'none';
+        if (label) label.textContent = 'Poolside Chill Music';
+      }
+      allVideos.forEach((other) => {
+        if (other !== vid && !other.paused) {
+          other.pause();
+        }
+      });
+    });
+  });
+</script>
