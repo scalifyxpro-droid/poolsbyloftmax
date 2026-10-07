@@ -111,7 +111,29 @@ ul{list-style:none;}
   height:78px;width:78px;object-fit:contain;display:block;border-radius:50%;
   filter:drop-shadow(0 6px 14px rgba(0,0,0,0.35));
 }
-.header-phone{color:var(--white);font-size:14px;position:absolute;right:40px;top:30px;}
+.header-phone{
+  position:absolute;right:40px;top:22px;
+  display:inline-flex;align-items:center;gap:10px;
+  padding:10px 22px;border-radius:999px;
+  background:rgba(8,22,34,0.72);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,0.22);
+  color:var(--white);font-size:16px;font-weight:500;
+  text-decoration:none;
+  box-shadow:0 6px 20px rgba(0,0,0,0.32);
+  transition:all .25s ease;
+}
+.header-phone:hover{
+  background:rgba(8,22,34,0.88);
+  border-color:var(--orange);
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(235,107,36,0.25);
+}
+.header-phone .phone-icon{color:var(--orange);flex-shrink:0;}
+.header-phone strong{
+  font-size:20px;font-weight:800;color:var(--white);
+  letter-spacing:0.5px;
+}
 
 /* ===== HERO ===== */
 .hero{
